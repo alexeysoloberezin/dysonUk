@@ -1,0 +1,119 @@
+/*
+ * Custom Select jQuery Plugin Base
+ */
+.custom-select {
+    position: relative;
+    font-size: 14px;
+    display: -ms-flexbox;
+    display: flex;
+    outline: none;
+    cursor: pointer;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.custom-select.custom-select--active:after {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.custom-select:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 16px;
+    z-index: 6;
+    height: 8px;
+    pointer-events: none;
+    transition: 0.2s;
+    display: block;
+    background: url("../images/icons/arr.svg") center/contain no-repeat;
+}
+
+.custom-select__option {
+    overflow: hidden;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    font-family: inherit;
+    white-space: nowrap;
+    text-align: left;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.custom-select__option-wrap {
+    position: relative;
+}
+
+.custom-select__input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border-width: 1px 0;
+    border-style: solid;
+    border-radius: 0;
+    font-family: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.custom-select__dropdown {
+    position: absolute;
+    z-index: 1007;
+    box-sizing: border-box;
+    width: 100%;
+    top: 100%;
+    background: #fff;
+    left: 0;
+    padding: 15px 10px 10px 10px;
+    box-shadow: 0 6px 5px rgba(201, 201, 201, 0.55);
+}
+
+.custom-select__dropdown .custom-select__option {
+    margin-bottom: 10px;
+}
+
+.custom-select--dropup .custom-select__dropdown {
+    top: auto;
+    bottom: 100%;
+}
+
+.custom-select__option--value {
+    position: relative;
+    font-size: 14px;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0 0px 0 15px;
+    height: 40px;
+    outline: none;
+    cursor: pointer;
+    -ms-flex-align: center;
+    align-items: center;
+    border: 1px solid #EBEBEB;
+}
+
+.custom-select__option--value::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: #fff;
+}
